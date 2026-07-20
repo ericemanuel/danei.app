@@ -8,7 +8,7 @@ class DaneiI18n {
       en: "en",
       es: "es",
     };
-    this.defaultLanguage = "es";
+    this.defaultLanguage = "pt-BR";
     this.storageKey = "danei-language";
     this.currentLanguage = this.defaultLanguage;
     this.translations = {};
