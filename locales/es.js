@@ -20,6 +20,7 @@ window.DANEI_LOCALES.es = {
     "title": "Tu dinero,",
     "emphasis": "Tu control.",
     "description": "Danei organiza tus ingresos, gastos, cuotas e inversiones en una experiencia simple, visual y fácil de entender.",
+    "privacyNote": "Sin anuncios y sin recolección de datos.",
     "privacyLink": "Cómo protegemos tus datos"
   },
   "features": {

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Danei es una aplicación de finanzas personales simple, visual y privada." />
+  <meta name="description" content="Danei é um aplicativo de finanças pessoais simples, visual e privado." />
   <meta name="theme-color" content="#ebebeb" />
-  <title>Danei: Tu dinero, tu control.</title>
+  <title>Danei: Seu dinheiro, seu controle.</title>
   <link rel="icon" type="image/svg+xml" href="assets/vectors/thumbnail.svg
   " />
   <link rel="stylesheet" href="styles/fonts.css" />
@@ -24,7 +24,7 @@
       </a>
 
       <div class="header-actions">
-        <div class="language-selector" id="languageSelector" role="group" aria-label="Seleccionar idioma"
+        <div class="language-selector" id="languageSelector" role="group" aria-label="Selecionar idioma"
           data-i18n-aria-label="accessibility.languageSelector">
           <span class="language-indicator" aria-hidden="true"></span>
 
@@ -32,16 +32,16 @@
             pt
           </button>
 
-          <button class="language-option" type="button" data-language="en" aria-label="English" aria-pressed="false">
+          <button class="language-option" type="button" data-language="en" aria-label="Inglês" aria-pressed="false">
             en
           </button>
 
-          <button class="language-option" type="button" data-language="es" aria-label="Español" aria-pressed="false">
+          <button class="language-option" type="button" data-language="es" aria-label="Espanhol" aria-pressed="false">
             es
           </button>
         </div>
 
-        <button class="theme-button" id="themeButton" type="button" aria-label="Activar tema oscuro"
+        <button class="theme-button" id="themeButton" type="button" aria-label="Ativar tema escuro"
           aria-pressed="false">
           <span id="themeIcon" aria-hidden="true">☀</span>
         </button>
@@ -60,23 +60,27 @@
           </h1>
 
           <p class="hero-description" data-i18n="hero.description">
-            Danei organiza tus ingresos, gastos, cuotas e inversiones en una
-            experiencia simple, visual y fácil de entender.
+            Danei organiza suas receitas, despesas, parcelas e investimentos em uma
+            experiência simples, visual e fácil de entender.
+          </p>
+
+          <p class="hero-privacy-note" data-i18n="hero.privacyNote">
+            Sem anúncios e sem coleta de dados.
           </p>
 
           <div class="store-links">
-            <small class="store-links-label" data-i18n="download.ctaLabel">Descargala ahora</small>
+            <small class="store-links-label" data-i18n="download.ctaLabel">Baixe agora:</small>
 
-            <div class="hero-actions" aria-label="Descargar Danei" data-i18n-aria-label="accessibility.downloadDanei">
+            <div class="hero-actions" aria-label="Baixar Danei" data-i18n-aria-label="accessibility.downloadDanei">
               <a class="button button-primary" href="https://play.google.com/store/apps/details?id=danei.app"
-                target="_blank" rel="noopener noreferrer" aria-label="Descargar Danei desde Google Play"
+                target="_blank" rel="noopener noreferrer" aria-label="Baixar Danei no Google Play"
                 data-i18n-aria-label="accessibility.googlePlay">
                 Android
                 <span aria-hidden="true">↗</span>
               </a>
 
               <a class="button button-iphone" href="https://apps.apple.com/br/app/danei/id6785736038" target="_blank"
-                rel="noopener noreferrer" aria-label="Descargar Danei desde App Store"
+                rel="noopener noreferrer" aria-label="Baixar Danei na App Store"
                 data-i18n-aria-label="accessibility.appStore">
                 iPhone
                 <span aria-hidden="true">↗</span>
@@ -95,20 +99,20 @@
         <div class="section-heading reveal">
           <div>
             <small class="section-label" data-i18n="features.label">
-              Una visión más simple
+              Uma visão mais simples
             </small>
 
             <h2>
-              <span data-i18n="features.title">Entendé tus finanzas</span>
+              <span data-i18n="features.title">Entenda suas finanças</span>
               <span class="muted-text" data-i18n="features.subtitle">
-                sin planillas infinitas.
+                sem planilhas infinitas.
               </span>
             </h2>
           </div>
 
           <p data-i18n="features.description">
-            Danei transforma tus movimientos diarios en una lectura clara de lo
-            que entra, lo que sale y lo que queda.
+            Danei transforma seus movimentos diários em uma leitura clara do que
+            entra, do que sai e do que permanece.
           </p>
         </div>
 
@@ -120,10 +124,10 @@
             </div>
 
             <div>
-              <h3 data-i18n="features.cards.month.title">Tu mes en segundos</h3>
+              <h3 data-i18n="features.cards.month.title">Seu mês em segundos</h3>
               <p data-i18n="features.cards.month.description">
-                Consultá el saldo mensual y compará ingresos, gastos, cuotas e
-                inversiones desde un único panel.
+                Consulte o saldo mensal e compare receitas, despesas, parcelas e
+                investimentos em um único painel.
               </p>
             </div>
           </article>
@@ -135,10 +139,10 @@
             </div>
 
             <div>
-              <h3 data-i18n="features.cards.history.title">Historial visual</h3>
+              <h3 data-i18n="features.cards.history.title">Histórico visual</h3>
               <p data-i18n="features.cards.history.description">
-                Explorá cada mes, filtrá movimientos y entendé cómo se distribuye
-                tu dinero entre las diferentes categorías.
+                Explore cada mês, filtre movimentos e entenda como seu dinheiro se
+                distribui entre as diferentes categorias.
               </p>
             </div>
           </article>
@@ -151,11 +155,11 @@
 
             <div>
               <h3 data-i18n="features.cards.categories.title">
-                Categorías que son tuyas
+                Categorias que são suas
               </h3>
               <p data-i18n="features.cards.categories.description">
-                Creá categorías con nombres, imágenes e íconos que te ayuden a
-                reconocer cada movimiento de un vistazo.
+                Crie categorias com nomes, imagens e ícones que ajudem a reconhecer
+                cada movimento rapidamente.
               </p>
             </div>
           </article>
@@ -167,23 +171,23 @@
       <div class="container experience-grid">
         <div class="experience-copy reveal">
           <small class="section-label" data-i18n="experience.label">
-            Hecho para el día a día
+            Feito para o dia a dia
           </small>
 
-          <h2 data-i18n="experience.title">Registrá. Entendé. Decidí.</h2>
+          <h2 data-i18n="experience.title">Registre. Entenda. Decida.</h2>
 
           <p data-i18n="experience.description">
-            No necesitás convertirte en especialista en finanzas. Danei organiza
-            la información para que puedas enfocarte en tus decisiones.
+            Você não precisa se tornar especialista em finanças. Danei organiza as
+            informações para que você possa se concentrar em suas decisões.
           </p>
 
           <div class="experience-steps">
             <article>
               <small>01</small>
               <div>
-                <h3 data-i18n="experience.steps.register.title">Registrá</h3>
+                <h3 data-i18n="experience.steps.register.title">Registre</h3>
                 <p data-i18n="experience.steps.register.description">
-                  Guardá cada movimiento con valor, fecha, tipo y categoría.
+                  Salve cada movimento com valor, data, tipo e categoria.
                 </p>
               </div>
             </article>
@@ -191,9 +195,9 @@
             <article>
               <small>02</small>
               <div>
-                <h3 data-i18n="experience.steps.understand.title">Entendé</h3>
+                <h3 data-i18n="experience.steps.understand.title">Entenda</h3>
                 <p data-i18n="experience.steps.understand.description">
-                  Revisá gráficos, saldos y distribuciones mensuales.
+                  Consulte gráficos, saldos e distribuições mensais.
                 </p>
               </div>
             </article>
@@ -201,9 +205,9 @@
             <article>
               <small>03</small>
               <div>
-                <h3 data-i18n="experience.steps.decide.title">Decidí</h3>
+                <h3 data-i18n="experience.steps.decide.title">Decida</h3>
                 <p data-i18n="experience.steps.decide.description">
-                  Usá información clara para ajustar tus próximos pasos.
+                  Use informações claras para ajustar seus próximos passos.
                 </p>
               </div>
             </article>
@@ -220,21 +224,21 @@
         <div class="privacy-panel reveal">
           <div class="privacy-copy">
             <small class="section-label" data-i18n="privacy.label">
-              Privacidad desde el diseño
+              Privacidade desde o design
             </small>
 
             <h2>
-              <span data-i18n="privacy.title">Tus finanzas permanecen</span>
-              <em data-i18n="privacy.emphasis">con vos.</em>
+              <span data-i18n="privacy.title">Suas finanças permanecem</span>
+              <em data-i18n="privacy.emphasis">com você.</em>
             </h2>
 
             <p data-i18n="privacy.description">
-              La información financiera que registrás en Danei se almacena
-              localmente en tu dispositivo.
+              As informações financeiras registradas no Danei são armazenadas
+              localmente em seu dispositivo.
             </p>
 
             <a class="text-link privacy-link" href="#privacy-details">
-              <span data-i18n="privacy.detailsLink">Conocé los detalles</span>
+              <span data-i18n="privacy.detailsLink">Conheça os detalhes</span>
               <span aria-hidden="true">↓</span>
             </a>
           </div>
@@ -254,28 +258,28 @@
         <div class="privacy-grid" id="privacy-details">
           <article class="privacy-card reveal">
             <span class="privacy-card-icon">⌂</span>
-            <h3 data-i18n="privacy.cards.local.title">Almacenamiento local</h3>
+            <h3 data-i18n="privacy.cards.local.title">Armazenamento local</h3>
             <p data-i18n="privacy.cards.local.description">
-              Tus títulos, valores, notas y registros financieros permanecen
-              guardados en tu propio dispositivo.
+              Seus títulos, valores, notas e registros financeiros permanecem
+              armazenados em seu próprio dispositivo.
             </p>
           </article>
 
           <article class="privacy-card reveal">
             <span class="privacy-card-icon">◉</span>
-            <h3 data-i18n="privacy.cards.lock.title">Bloqueo del dispositivo</h3>
+            <h3 data-i18n="privacy.cards.lock.title">Bloqueio do dispositivo</h3>
             <p data-i18n="privacy.cards.lock.description">
-              Protegé la apertura de Danei mediante biometría, PIN o la contraseña
-              configurada en tu teléfono.
+              Proteja a abertura do Danei com biometria, PIN ou a senha configurada
+              em seu telefone.
             </p>
           </article>
 
           <article class="privacy-card reveal">
             <span class="privacy-card-icon">⇩</span>
-            <h3 data-i18n="privacy.cards.backup.title">Backups bajo tu control</h3>
+            <h3 data-i18n="privacy.cards.backup.title">Backups sob seu controle</h3>
             <p data-i18n="privacy.cards.backup.description">
-              Exportá un archivo de respaldo y restauralo cuando necesites
-              recuperar o trasladar tu información.
+              Exporte um arquivo de backup e restaure-o quando precisar recuperar
+              ou transferir suas informações.
             </p>
           </article>
         </div>
@@ -286,24 +290,24 @@
       <div class="container preferences-grid">
         <div class="preferences-copy reveal">
           <small class="section-label" data-i18n="preferences.label">
-            Tu app, a tu manera
+            Seu app, do seu jeito
           </small>
 
           <h2 data-i18n="preferences.title">
-            Adaptada a cómo vivís y organizás tu dinero.
+            Adaptado à forma como você vive e organiza seu dinheiro.
           </h2>
 
           <p data-i18n="preferences.description">
-            Elegí idioma, moneda, país, apariencia, categorías y tipos de
-            transacción visibles.
+            Escolha idioma, moeda, país, aparência, categorias e tipos de transação
+            visíveis.
           </p>
 
           <div class="preference-tags">
-            <small data-i18n="preferences.tags.spanish">Español</small>
+            <small data-i18n="preferences.tags.spanish">Espanhol</small>
             <small data-i18n="preferences.tags.portuguese">Português</small>
-            <small data-i18n="preferences.tags.english">English</small>
+            <small data-i18n="preferences.tags.english">Inglês</small>
             <small data-i18n="preferences.tags.light">Tema claro</small>
-            <small data-i18n="preferences.tags.dark">Tema oscuro</small>
+            <small data-i18n="preferences.tags.dark">Tema escuro</small>
           </div>
         </div>
 
@@ -317,32 +321,32 @@
         <div class="download-panel reveal">
           <div>
             <small class="section-label" data-i18n="download.label">
-              Danei ya está disponible
+              Danei já está disponível
             </small>
 
             <h2 data-i18n="download.title">
-              Una forma más simple de entender tu dinero.
+              Uma forma mais simples de entender seu dinheiro.
             </h2>
 
             <p data-i18n="download.description">
-              Descargá Danei en tu teléfono y empezá a organizar tus finanzas con
-              más claridad y menos esfuerzo.
+              Baixe o Danei em seu telefone e comece a organizar suas finanças com
+              mais clareza e menos esforço.
             </p>
           </div>
 
           <div class="store-links download-store-links">
-            <small class="store-links-label" data-i18n="download.ctaLabel">Descargala ahora</small>
+            <small class="store-links-label" data-i18n="download.ctaLabel">Baixe agora:</small>
 
-            <div class="hero-actions" aria-label="Descargar Danei" data-i18n-aria-label="accessibility.downloadDanei">
+            <div class="hero-actions" aria-label="Baixar Danei" data-i18n-aria-label="accessibility.downloadDanei">
               <a class="button button-light" href="https://play.google.com/store/apps/details?id=danei.app"
-                target="_blank" rel="noopener noreferrer" aria-label="Descargar Danei desde Google Play"
+                target="_blank" rel="noopener noreferrer" aria-label="Baixar Danei no Google Play"
                 data-i18n-aria-label="accessibility.googlePlay">
                 Android
                 <span aria-hidden="true">↗</span>
               </a>
 
               <a class="button button-iphone" href="https://apps.apple.com/br/app/danei/id6785736038" target="_blank"
-                rel="noopener noreferrer" aria-label="Descargar Danei desde App Store"
+                rel="noopener noreferrer" aria-label="Baixar Danei na App Store"
                 data-i18n-aria-label="accessibility.appStore">
                 iPhone
                 <span aria-hidden="true">↗</span>

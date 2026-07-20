@@ -468,6 +468,19 @@ body.dark-theme .language-option.active {
   color: var(--text-secondary);
 }
 
+.hero-privacy-note {
+  width: fit-content;
+  margin: 12px 0 0;
+  color: var(--aqua);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: left;
+  background: linear-gradient(90deg, var(--aqua), var(--violet));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .store-links {
   margin-top: 36px;
 }
@@ -475,10 +488,10 @@ body.dark-theme .language-option.active {
 .store-links-label {
   display: block;
   color: var(--text-secondary);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: normal;
 }
 
 .hero-actions {
@@ -994,19 +1007,6 @@ danei-screen-showcase {
   animation: screen-float 6s ease-in-out infinite;
 }
 
-.screen-showcase-frame::before {
-  position: absolute;
-  z-index: 4;
-  top: 18px;
-  left: 50%;
-  width: 31%;
-  height: 25px;
-  border-radius: 999px;
-  background: #111820;
-  content: "";
-  transform: translateX(-50%);
-}
-
 .screen-showcase-frame::after {
   position: absolute;
   z-index: -1;
@@ -1461,11 +1461,6 @@ body.dark-theme .screen-showcase-ripple span {
     width: min(76vw, 310px);
     padding: 8px;
     border-radius: 40px;
-  }
-
-  .screen-showcase-frame::before {
-    top: 15px;
-    height: 21px;
   }
 
   .screen-showcase-frame img,
