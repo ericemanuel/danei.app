@@ -20,6 +20,7 @@ window.DANEI_LOCALES.en = {
     "title": "Your money,",
     "emphasis": "Your control.",
     "description": "Danei organizes your income, expenses, installments and investments in a simple, visual and easy-to-understand experience.",
+    "privacyNote": "No ads and no data collection.",
     "privacyLink": "How we protect your data"
   },
   "features": {

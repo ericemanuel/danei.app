@@ -8,7 +8,7 @@ class DaneiI18n {
       en: "en",
       es: "es",
     };
-    this.defaultLanguage = "pt-BR";
+    this.defaultLanguage = "pt";
     this.storageKey = "danei-language";
     this.currentLanguage = this.defaultLanguage;
     this.translations = {};
@@ -35,16 +35,6 @@ class DaneiI18n {
     const savedMatch = this.matchLanguage(savedLanguage);
 
     if (savedMatch) return savedMatch;
-
-    const browserLanguages = navigator.languages?.length
-      ? navigator.languages
-      : [navigator.language];
-
-    for (const language of browserLanguages) {
-      const match = this.matchLanguage(language);
-
-      if (match) return match;
-    }
 
     return this.defaultLanguage;
   }

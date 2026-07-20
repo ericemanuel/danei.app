@@ -20,6 +20,7 @@ window.DANEI_LOCALES.pt = {
     "title": "Seu dinheiro,",
     "emphasis": "Seu controle.",
     "description": "Danei organiza suas receitas, despesas, parcelas e investimentos em uma experiência simples, visual e fácil de entender.",
+    "privacyNote": "Sem anúncios e sem coleta de dados.",
     "privacyLink": "Como protegemos seus dados"
   },
   "features": {
@@ -95,7 +96,7 @@ window.DANEI_LOCALES.pt = {
     }
   },
   "download": {
-    "ctaLabel": "Baixe agora",
+    "ctaLabel": "Baixe agora:",
     "label": "Danei já está disponível",
     "title": "Uma forma mais simples de entender seu dinheiro.",
     "description": "Baixe o Danei em seu telefone e comece a organizar suas finanças com mais clareza e menos esforço."
