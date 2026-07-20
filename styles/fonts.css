@@ -1,0 +1,249 @@
+/* Defines the Danei type system through semantic HTML tags. */
+
+/* font faces
+--------------------------------------------- */
+@font-face {
+  font-family: "eina";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../assets/fonts/eina-light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "eina";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../assets/fonts/eina-lightitalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "eina";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/eina-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "eina";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/eina-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "eina";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../assets/fonts/eina-semibold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "eina";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../assets/fonts/eina-semibolditalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "eina";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/eina-bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "eina";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/eina-bolditalic.woff2") format("woff2");
+}
+
+/* foundation
+--------------------------------------------- */
+html {
+  font-family: "eina", Arial, sans-serif;
+  font-kerning: normal;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: normal;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+small {
+  letter-spacing: normal;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 76px;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+h5 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+h6,
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+small {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--aqua), var(--violet));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1 em,
+h2 em {
+  font-weight: 700;
+}
+
+i {
+  font-style: italic;
+}
+
+a,
+button {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: normal;
+  text-decoration: none;
+}
+
+label,
+.section-label {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: normal;
+  text-transform: uppercase;
+}
+
+/* component semantics
+--------------------------------------------- */
+.language-option {
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.feature-number,
+.experience-steps article>small,
+.preference-tags small {
+  font-weight: 600;
+}
+
+.screen-showcase-card strong {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.screen-showcase-card small {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+/* icons and symbols
+--------------------------------------------- */
+.theme-button,
+.feature-symbol,
+.privacy-card-icon,
+.screen-showcase-card-icon,
+.hero-actions [aria-hidden="true"],
+.text-link [aria-hidden="true"] {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.lock-body {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 34px;
+}
+
+/* responsive scale
+--------------------------------------------- */
+@media (max-width: 580px) {
+  h1 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  h2 {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 44px;
+  }
+}
