@@ -102,12 +102,33 @@ function observeElements() {
   });
 }
 
-function selectLanguage(language) {
-  const changed = window.daneiI18n?.setLanguage(language);
+function selectLanguage(language, updateHistory = true) {
+  const i18n = window.daneiI18n;
+
+  if (!i18n) return false;
+
+  const normalizedLanguage = i18n.normalizeLanguage(language);
+  const nextPath = i18n.getPathForLanguage(normalizedLanguage);
+
+  if (updateHistory && window.location.pathname !== nextPath) {
+    window.history.pushState(
+      { language: normalizedLanguage },
+      "",
+      nextPath,
+    );
+  }
+
+  const changed = i18n.setLanguage(normalizedLanguage);
 
   if (changed) updateThemeLabel();
 
   return changed;
+}
+
+function restoreLanguageFromUrl() {
+  const language = window.daneiI18n?.getLanguageFromPathname();
+
+  if (language) selectLanguage(language, false);
 }
 
 function languageIndex(language) {
@@ -214,6 +235,7 @@ function bindEvents() {
 
 
   document.addEventListener("danei:languagechange", updateThemeLabel);
+  window.addEventListener("popstate", restoreLanguageFromUrl);
 }
 
 function start() {
