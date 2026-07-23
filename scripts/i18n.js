@@ -106,11 +106,26 @@ class DaneiI18n {
     const title = this.t("meta.title");
     const description = this.t("meta.description");
     const descriptionMeta = document.querySelector('meta[name="description"]');
+    const socialTitleMetas = document.querySelectorAll(
+      'meta[property="og:title"], meta[name="twitter:title"]',
+    );
+    const socialDescriptionMetas = document.querySelectorAll(
+      'meta[property="og:description"], meta[name="twitter:description"]',
+    );
 
-    if (title) document.title = title;
+    if (title) {
+      document.title = title;
+      socialTitleMetas.forEach((meta) => meta.setAttribute("content", title));
+    }
 
     if (description && descriptionMeta) {
       descriptionMeta.setAttribute("content", description);
+    }
+
+    if (description) {
+      socialDescriptionMetas.forEach((meta) => {
+        meta.setAttribute("content", description);
+      });
     }
   }
 
