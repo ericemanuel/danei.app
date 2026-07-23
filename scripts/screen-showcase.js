@@ -1,5 +1,11 @@
 // Defines the reusable Danei app screen showcase component.
 
+const showcaseImageDimensions = {
+  "assets/images/panel": { width: 720, height: 1510 },
+  "assets/images/history": { width: 720, height: 1510 },
+  "assets/images/category": { width: 720, height: 1510 },
+};
+
 class DaneiScreenShowcase extends HTMLElement {
   connectedCallback() {
     if (this.dataset.initialized === "true") return;
@@ -28,7 +34,11 @@ class DaneiScreenShowcase extends HTMLElement {
 
     showcase.append(
       this.createRipple(),
-      this.createFrame(imageBase, `showcases.${screen}.alt`),
+      this.createFrame(
+        imageBase,
+        `showcases.${screen}.alt`,
+        screen === "panel",
+      ),
       this.createFloatingCard(cardOne, "one"),
       this.createFloatingCard(cardTwo, "two"),
     );
@@ -49,23 +59,33 @@ class DaneiScreenShowcase extends HTMLElement {
     return ripple;
   }
 
-  createFrame(imageBase, imageAltKey) {
+  createFrame(imageBase, imageAltKey, isPriority) {
     const figure = document.createElement("figure");
     const image = document.createElement("img");
     const placeholder = document.createElement("div");
     const placeholderMark = document.createElement("span");
     const placeholderText = document.createElement("small");
+    const dimensions = showcaseImageDimensions[imageBase];
 
     figure.className = "screen-showcase-frame";
 
     image.src = `${imageBase}-light.png`;
     image.alt = "";
-    image.loading = "lazy";
+    image.loading = isPriority ? "eager" : "lazy";
     image.decoding = "async";
     image.dataset.themeImage = "true";
     image.dataset.lightSource = `${imageBase}-light.png`;
     image.dataset.darkSource = `${imageBase}-dark.png`;
     image.setAttribute("data-i18n-alt", imageAltKey);
+
+    if (isPriority) {
+      image.setAttribute("fetchpriority", "high");
+    }
+
+    if (dimensions) {
+      image.width = dimensions.width;
+      image.height = dimensions.height;
+    }
 
     placeholder.className = "screen-showcase-placeholder";
     placeholder.setAttribute("aria-hidden", "true");
