@@ -75,7 +75,7 @@ body {
   overflow-x: hidden;
   color: var(--text-primary);
   background-color: var(--background);
-  background-image: url("../assets/vectors/rapport.svg");
+  background-image: url("/assets/vectors/rapport.svg");
   background-repeat: repeat;
   background-position: top left;
   transition: color var(--transition), background-color var(--transition);

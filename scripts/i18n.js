@@ -8,6 +8,12 @@ class DaneiI18n {
       en: "en",
       es: "es",
     };
+    this.languagePaths = {
+      pt: "/pt/",
+      en: "/en/",
+      es: "/es/",
+    };
+    this.siteUrl = "https://danei.app";
     this.defaultLanguage = "pt";
     this.storageKey = "danei-language";
     this.currentLanguage = this.defaultLanguage;
@@ -30,13 +36,42 @@ class DaneiI18n {
     return this.matchLanguage(language) || this.defaultLanguage;
   }
 
+  getRouteLanguage(pathname = window.location.pathname) {
+    const normalizedPath = `/${pathname.split("/").filter(Boolean).join("/")}`;
+    const routeLanguages = {
+      "/pt": "pt",
+      "/en": "en",
+      "/es": "es",
+    };
+
+    if (normalizedPath === "/") return this.defaultLanguage;
+
+    return routeLanguages[normalizedPath] || null;
+  }
+
+  getLanguageFromPathname(pathname = window.location.pathname) {
+    return this.getRouteLanguage(pathname) || this.defaultLanguage;
+  }
+
+  getPathForLanguage(language) {
+    const normalizedLanguage = this.normalizeLanguage(language);
+
+    return this.languagePaths[normalizedLanguage];
+  }
+
   getInitialLanguage() {
-    const savedLanguage = localStorage.getItem(this.storageKey);
-    const savedMatch = this.matchLanguage(savedLanguage);
+    const routeLanguage = this.getRouteLanguage();
 
-    if (savedMatch) return savedMatch;
+    return routeLanguage || this.defaultLanguage;
+  }
 
-    return this.defaultLanguage;
+  getCanonicalUrl() {
+    const path =
+      window.location.pathname === "/"
+        ? "/"
+        : this.getPathForLanguage(this.currentLanguage);
+
+    return new URL(path, this.siteUrl).href;
   }
 
   getDictionary(language) {
@@ -105,7 +140,10 @@ class DaneiI18n {
 
     const title = this.t("meta.title");
     const description = this.t("meta.description");
+    const pageUrl = this.getCanonicalUrl();
     const descriptionMeta = document.querySelector('meta[name="description"]');
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
+    const openGraphUrlMeta = document.querySelector('meta[property="og:url"]');
     const socialTitleMetas = document.querySelectorAll(
       'meta[property="og:title"], meta[name="twitter:title"]',
     );
@@ -126,6 +164,14 @@ class DaneiI18n {
       socialDescriptionMetas.forEach((meta) => {
         meta.setAttribute("content", description);
       });
+    }
+
+    if (canonicalLink) {
+      canonicalLink.setAttribute("href", pageUrl);
+    }
+
+    if (openGraphUrlMeta) {
+      openGraphUrlMeta.setAttribute("content", pageUrl);
     }
   }
 

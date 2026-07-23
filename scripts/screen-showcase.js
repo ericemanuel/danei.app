@@ -1,9 +1,9 @@
 // Defines the reusable Danei app screen showcase component.
 
 const showcaseImageDimensions = {
-  "assets/images/panel": { width: 720, height: 1510 },
-  "assets/images/history": { width: 720, height: 1510 },
-  "assets/images/category": { width: 720, height: 1510 },
+  "/assets/images/panel": { width: 720, height: 1510 },
+  "/assets/images/history": { width: 720, height: 1510 },
+  "/assets/images/category": { width: 720, height: 1510 },
 };
 
 const requestedShowcaseImageSources = new Set();
