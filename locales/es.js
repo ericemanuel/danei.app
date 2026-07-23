@@ -4,8 +4,8 @@ window.DANEI_LOCALES = window.DANEI_LOCALES || {};
 
 window.DANEI_LOCALES.es = {
   "meta": {
-    "title": "Danei: Tu dinero, tu control.",
-    "description": "Danei es una aplicación de finanzas personales simple, visual y privada."
+    "title": "Danei: aplicación de finanzas personales",
+    "description": "Organizá ingresos, gastos, cuotas e inversiones con Danei, una aplicación de finanzas personales sin anuncios ni recolección de datos."
   },
   "accessibility": {
     "home": "Danei, página inicial",
