@@ -6,6 +6,9 @@ const showcaseImageDimensions = {
   "assets/images/category": { width: 720, height: 1510 },
 };
 
+const requestedShowcaseImageSources = new Set();
+const showcaseImagePreloads = new Map();
+
 class DaneiScreenShowcase extends HTMLElement {
   connectedCallback() {
     if (this.dataset.initialized === "true") return;
@@ -95,6 +98,7 @@ class DaneiScreenShowcase extends HTMLElement {
 
     image.addEventListener("load", () => {
       figure.classList.remove("screen-showcase-frame-missing");
+      this.preloadOppositeThemeImage(image);
     });
 
     image.addEventListener("error", () => {
@@ -104,6 +108,28 @@ class DaneiScreenShowcase extends HTMLElement {
     figure.append(image, placeholder);
 
     return figure;
+  }
+
+  preloadOppositeThemeImage(image) {
+    const currentSource = image.getAttribute("src");
+    const oppositeSource =
+      currentSource === image.dataset.darkSource
+        ? image.dataset.lightSource
+        : image.dataset.darkSource;
+
+    if (currentSource) {
+      requestedShowcaseImageSources.add(currentSource);
+    }
+
+    if (!oppositeSource || requestedShowcaseImageSources.has(oppositeSource)) {
+      return;
+    }
+
+    const preload = new Image();
+
+    requestedShowcaseImageSources.add(oppositeSource);
+    showcaseImagePreloads.set(oppositeSource, preload);
+    preload.src = oppositeSource;
   }
 
   createFloatingCard(card, position) {

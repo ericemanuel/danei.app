@@ -12,17 +12,6 @@ function getThemeImages() {
   return document.querySelectorAll("[data-theme-image]");
 }
 
-function preloadThemeImages() {
-  getThemeImages().forEach((image) => {
-    [image.dataset.lightSource, image.dataset.darkSource]
-      .filter(Boolean)
-      .forEach((source) => {
-        const preload = new Image();
-        preload.src = source;
-      });
-  });
-}
-
 function updateThemeImages(isDark) {
   getThemeImages().forEach((image) => {
     const nextSource = isDark
@@ -232,7 +221,6 @@ function start() {
 
   loadTheme();
   observeElements();
-  preloadThemeImages();
 
   window.daneiI18n?.init();
   updateThemeLabel();
