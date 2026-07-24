@@ -13,6 +13,20 @@ class DaneiI18n {
       en: "/en/",
       es: "/es/",
     };
+    this.socialCards = {
+      pt: {
+        url: "https://danei.app/pt/social-card.png",
+        alt: "Danei — Seu dinheiro, seu controle.",
+      },
+      en: {
+        url: "https://danei.app/en/social-card.png",
+        alt: "Danei — Your money, your control.",
+      },
+      es: {
+        url: "https://danei.app/es/social-card.png",
+        alt: "Danei — Tu dinero, tu control.",
+      },
+    };
     this.siteUrl = "https://danei.app";
     this.defaultLanguage = "pt";
     this.storageKey = "danei-language";
@@ -141,6 +155,7 @@ class DaneiI18n {
     const title = this.t("meta.title");
     const description = this.t("meta.description");
     const pageUrl = this.getCanonicalUrl();
+    const socialCard = this.socialCards[this.currentLanguage];
     const descriptionMeta = document.querySelector('meta[name="description"]');
     const canonicalLink = document.querySelector('link[rel="canonical"]');
     const openGraphUrlMeta = document.querySelector('meta[property="og:url"]');
@@ -149,6 +164,12 @@ class DaneiI18n {
     );
     const socialDescriptionMetas = document.querySelectorAll(
       'meta[property="og:description"], meta[name="twitter:description"]',
+    );
+    const socialImageMetas = document.querySelectorAll(
+      'meta[property="og:image"], meta[name="twitter:image"]',
+    );
+    const socialImageAltMetas = document.querySelectorAll(
+      'meta[property="og:image:alt"], meta[name="twitter:image:alt"]',
     );
 
     if (title) {
@@ -172,6 +193,15 @@ class DaneiI18n {
 
     if (openGraphUrlMeta) {
       openGraphUrlMeta.setAttribute("content", pageUrl);
+    }
+
+    if (socialCard) {
+      socialImageMetas.forEach((meta) => {
+        meta.setAttribute("content", socialCard.url);
+      });
+      socialImageAltMetas.forEach((meta) => {
+        meta.setAttribute("content", socialCard.alt);
+      });
     }
   }
 
