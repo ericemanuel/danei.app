@@ -1,9 +1,9 @@
 // Defines the reusable Danei app screen showcase component.
 
 const showcaseImageDimensions = {
-  "/assets/images/panel": { width: 720, height: 1510 },
-  "/assets/images/history": { width: 720, height: 1510 },
-  "/assets/images/category": { width: 720, height: 1510 },
+  "assets/images/panel": { width: 720, height: 1510 },
+  "assets/images/history": { width: 720, height: 1510 },
+  "assets/images/category": { width: 720, height: 1510 },
 };
 
 const requestedShowcaseImageSources = new Set();
@@ -69,16 +69,17 @@ class DaneiScreenShowcase extends HTMLElement {
     const placeholderMark = document.createElement("span");
     const placeholderText = document.createElement("small");
     const dimensions = showcaseImageDimensions[imageBase];
+    const resolvedImageBase = new URL(imageBase, document.baseURI).href;
 
     figure.className = "screen-showcase-frame";
 
-    image.src = `${imageBase}-light.png`;
+    image.src = `${resolvedImageBase}-light.png`;
     image.alt = "";
     image.loading = isPriority ? "eager" : "lazy";
     image.decoding = "async";
     image.dataset.themeImage = "true";
-    image.dataset.lightSource = `${imageBase}-light.png`;
-    image.dataset.darkSource = `${imageBase}-dark.png`;
+    image.dataset.lightSource = `${resolvedImageBase}-light.png`;
+    image.dataset.darkSource = `${resolvedImageBase}-dark.png`;
     image.setAttribute("data-i18n-alt", imageAltKey);
 
     if (isPriority) {
