@@ -4,7 +4,7 @@ window.DANEI_LOCALES = window.DANEI_LOCALES || {};
 
 window.DANEI_LOCALES.pt = {
   "meta": {
-    "title": "Danei: aplicativo de finanças pessoais",
+    "title": "Danei: controle de gastos e finanças pessoais",
     "description": "Organize receitas, despesas, parcelas e investimentos com o Danei, um aplicativo de finanças pessoais sem anúncios e sem coleta de dados."
   },
   "accessibility": {

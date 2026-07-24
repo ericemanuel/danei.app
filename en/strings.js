@@ -4,7 +4,7 @@ window.DANEI_LOCALES = window.DANEI_LOCALES || {};
 
 window.DANEI_LOCALES.en = {
   "meta": {
-    "title": "Danei: personal finance app",
+    "title": "Danei: expense tracking and personal finance",
     "description": "Organize income, expenses, installments and investments with Danei, a personal finance app with no ads and no data collection."
   },
   "accessibility": {
