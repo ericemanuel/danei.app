@@ -51,12 +51,21 @@ class DaneiI18n {
   }
 
   getRouteLanguage(pathname = window.location.pathname) {
-    const normalizedPath = `/${pathname.split("/").filter(Boolean).join("/")}`;
+    const pathSegments = pathname.split("/").filter(Boolean);
+    const normalizedPath = `/${pathSegments.join("/")}`;
     const routeLanguages = {
       "/pt": "pt",
       "/en": "en",
       "/es": "es",
     };
+
+    if (window.location.protocol === "file:") {
+      const fileLanguage = pathSegments.at(-2);
+
+      return this.supportedLanguages.includes(fileLanguage)
+        ? fileLanguage
+        : this.defaultLanguage;
+    }
 
     if (normalizedPath === "/") return this.defaultLanguage;
 
@@ -80,8 +89,14 @@ class DaneiI18n {
   }
 
   getCanonicalUrl() {
+    const isRootDocument =
+      window.location.pathname === "/" ||
+      (window.location.protocol === "file:" &&
+        !this.supportedLanguages.includes(
+          window.location.pathname.split("/").filter(Boolean).at(-2),
+        ));
     const path =
-      window.location.pathname === "/"
+      isRootDocument && this.currentLanguage === this.defaultLanguage
         ? "/"
         : this.getPathForLanguage(this.currentLanguage);
 

@@ -3,6 +3,22 @@
 
 <head>
   <meta charset="UTF-8" />
+  <base href="../" />
+  <script>
+    (() => {
+      const base = document.querySelector("base");
+      const isLocalizedFile = /\/(?:pt|en|es)\/index\.html$/i.test(
+        decodeURI(location.pathname),
+      );
+
+      base.href =
+        location.protocol === "file:"
+          ? isLocalizedFile
+            ? "../"
+            : "./"
+          : "/";
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
     content="Organize income, expenses, installments and investments with Danei, a personal finance app with no ads and no data collection." />
@@ -49,9 +65,9 @@
   <link rel="alternate" hreflang="en" href="https://danei.app/en/" />
   <link rel="alternate" hreflang="es" href="https://danei.app/es/" />
   <link rel="alternate" hreflang="x-default" href="https://danei.app/" />
-  <link rel="icon" type="image/svg+xml" href="/assets/vectors/thumbnail.svg" />
-  <link rel="stylesheet" href="/styles/fonts.css" />
-  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/vectors/thumbnail.svg" />
+  <link rel="stylesheet" href="styles/fonts.css" />
+  <link rel="stylesheet" href="styles/main.css" />
 </head>
 
 <body>
@@ -61,7 +77,7 @@
   <header class="site-header">
     <div class="container header-content">
       <a class="logo-link" href="#home" aria-label="Danei, home page" data-i18n-aria-label="accessibility.home">
-        <img class="danei-logo" src="/assets/vectors/danei.svg" width="170" height="156" alt="" />
+        <img class="danei-logo" src="assets/vectors/danei.svg" width="170" height="156" alt="" />
       </a>
 
       <div class="header-actions">
@@ -126,7 +142,7 @@
           </div>
         </div>
 
-        <danei-screen-showcase class="reveal" screen="panel" image-base="/assets/images/panel" card-one-icon="⊘"
+        <danei-screen-showcase class="reveal" screen="panel" image-base="assets/images/panel" card-one-icon="⊘"
           card-one-tone="aqua" card-two-icon="◉" card-two-tone="violet"></danei-screen-showcase>
       </div>
     </section>
@@ -222,7 +238,7 @@
           </div>
         </div>
 
-        <danei-screen-showcase class="reveal" screen="history" image-base="/assets/images/history" card-one-icon="↕"
+        <danei-screen-showcase class="reveal" screen="history" image-base="assets/images/history" card-one-icon="↕"
           card-one-tone="aqua" card-two-icon="⌕" card-two-tone="gold"></danei-screen-showcase>
       </div>
     </section>
@@ -252,7 +268,7 @@
             <div class="privacy-lock">
               <span class="lock-handle"></span>
               <span class="lock-body">
-                <img class="lock-logo" src="/assets/vectors/danei.svg" width="170" height="156" alt="" />
+                <img class="lock-logo" src="assets/vectors/danei.svg" width="170" height="156" alt="" />
               </span>
             </div>
           </div>
@@ -298,7 +314,7 @@
           </div>
         </div>
 
-        <danei-screen-showcase class="reveal" screen="category" image-base="/assets/images/category" card-one-icon="✦"
+        <danei-screen-showcase class="reveal" screen="category" image-base="assets/images/category" card-one-icon="✦"
           card-one-tone="violet" card-two-icon="▦" card-two-tone="blush"></danei-screen-showcase>
       </div>
     </section>
@@ -342,16 +358,16 @@
   <footer class="site-footer">
     <a class="logo-link footer-logo" href="#home" aria-label="Danei, home page"
       data-i18n-aria-label="accessibility.home">
-      <img class="danei-logo" src="/assets/vectors/danei.svg" width="170" height="156" alt="" />
+      <img class="danei-logo" src="assets/vectors/danei.svg" width="170" height="156" alt="" />
     </a>
   </footer>
 
-  <script defer src="/pt/strings.js"></script>
-  <script defer src="/en/strings.js"></script>
-  <script defer src="/es/strings.js"></script>
-  <script defer src="/scripts/i18n.js"></script>
-  <script defer src="/scripts/screen-showcase.js"></script>
-  <script defer src="/scripts/scripts.js"></script>
+  <script defer src="pt/strings.js"></script>
+  <script defer src="en/strings.js"></script>
+  <script defer src="es/strings.js"></script>
+  <script defer src="scripts/i18n.js"></script>
+  <script defer src="scripts/screen-showcase.js"></script>
+  <script defer src="scripts/scripts.js"></script>
 </body>
 
 </html>

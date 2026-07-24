@@ -110,7 +110,15 @@ function selectLanguage(language, updateHistory = true) {
   const normalizedLanguage = i18n.normalizeLanguage(language);
   const nextPath = i18n.getPathForLanguage(normalizedLanguage);
 
-  if (updateHistory && window.location.pathname !== nextPath) {
+  const supportsRouteHistory =
+    window.location.protocol === "http:" ||
+    window.location.protocol === "https:";
+
+  if (
+    updateHistory &&
+    supportsRouteHistory &&
+    window.location.pathname !== nextPath
+  ) {
     window.history.pushState(
       { language: normalizedLanguage },
       "",
@@ -238,8 +246,28 @@ function bindEvents() {
   window.addEventListener("popstate", restoreLanguageFromUrl);
 }
 
+function preserveDocumentFragmentLinks() {
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const targetId = link.getAttribute("href")?.slice(1);
+      const target = targetId ? document.getElementById(targetId) : null;
+
+      if (!target) return;
+
+      event.preventDefault();
+
+      if (window.location.hash === `#${targetId}`) {
+        target.scrollIntoView();
+      } else {
+        window.location.hash = targetId;
+      }
+    });
+  });
+}
+
 function start() {
   bindEvents();
+  preserveDocumentFragmentLinks();
 
   loadTheme();
   observeElements();
